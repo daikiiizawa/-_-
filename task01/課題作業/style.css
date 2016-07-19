@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+ul{
+  list-style: none;
+}
+
+body{
+  margin:24px 10px;
+  font-family: 'メイリオ','Hiragano Kaku Gothic Pro'sans-serif;
+  color: #666;
+}
+
+#container{
+  width: 960px;
+  margin:0 auto;
+}
+
+#logo{
+  margin: 10px 0 10px;
+  line-height: 1;
+  color: #CCC;
+  font-size: 50px;
+}
+
+#logo h1 {
+  margin: 0;
+  line-height: 1;
+  color: #ccc;
+  font-size: 50px;
+}
+
+nav{
+  margin: 0px 0 20px;
+  padding: 0;
+  font-size: 14px;
+  border-top: solid 1px #fff;
+  background-color: #0097d8;
+}
+
+nav ul{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+nav li{
+  float: left;
+}
+
+nav li a{
+  display: block;
+  width: 120px;
+  padding: 10px 0;
+  border-right: solid 1px #fff;
+  color :#fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav li.on a, nav l a:hover{
+  background-color: #ccc;
+}
+
+aside{
+  width: 310px;
+  float: left;
+}
+
+/*メニュー*/
+.menu{
+  margin-bottom: 50px;
+}
+
+.menu h3{
+  font-size: 26px;
+}
+
+.menu ul{
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  width: 65%;
+  margin-bottom: 0;
+  border-bottom: solid 1px #aaa;
+}
+
+.menu li a{
+  display: block;
+  text-decoration: none;
+  font size: 14px;
+  color: #666;
+  padding: 10px 0 10px 10px;
+}
+
+.menu li a:hover{
+  background-color: #ccc;
+}
+
+
+article{
+  width: 610px;
+  float: right;
+}
+article img{
+  max-width: 80%;
+  height: auto;
+}
+
+section{
+  margin-bottom: 40px;
+}
+
+article h2{
+  width: 35%;
+  font-size: 28px;
+  border-bottom: solid 1px #aaa;
+  margin:0 0 6px;
+  padding: 0 0 3px;
+}
+
+article p{
+  line-height: 1.6;
+}
+
+article section h3{
+  margin: 0 0 20px;
+  padding: 8px 0 8px 36px;
+}
+
+
+footer{
+  clear: both;
+  color: #fff;
+  background-color: #666;
+  padding: 20px 10px 25px;
+}
+
+footer p{
+  margin: 0;
+  padding: 0;
+}
+
+footer p a{
+  font-size: 90%;
+  color: #fff;
+}
+
+footer small{
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+}

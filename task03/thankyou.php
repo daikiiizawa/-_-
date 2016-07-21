@@ -2,11 +2,11 @@
 
 session_start();
 
-$ShiftJIS = $_SESSION; //文字コードを変えるので、専用の配列を作成してコピー
-mb_convert_variables('Shift_JIS', 'UTF-8', $ShiftJIS); //文字コードをUTF-8からShiftJISに変更
-$csv = fopen('contact.csv', 'a'); //csvファイルと書き込みモードを指定
-fputcsv($csv, $ShiftJIS); //変換した配列をcsvファイルに書き込み実行
-fclose($csv); //csvファイルを閉じる
+// $ShiftJIS = $_SESSION; //文字コードを変えるので、専用の配列を作成してコピー
+// mb_convert_variables('Shift_JIS', 'UTF-8', $ShiftJIS); //文字コードをUTF-8からShiftJISに変更
+// $csv = fopen('contact.csv', 'a'); //csvファイルと書き込みモードを指定
+// fputcsv($csv, $ShiftJIS); //変換した配列をcsvファイルに書き込み実行
+// fclose($csv); //csvファイルを閉じる
 
 $_SESSION = array();
 session_destroy();

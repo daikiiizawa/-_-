@@ -68,7 +68,7 @@
 
     <footer>
       <p><a href="http://nowall.co.jp/">株式会社 NOWALL</a></p>
-      <small> <?php echo "表示されるない"; ?> @2015 NOWALL, Inc. All Rights Reserved.</small>
+      <small> @<?php echo date("Y"); ?> NOWALL, Inc. All Rights Reserved.</small>
     </footer>
   </div>
 

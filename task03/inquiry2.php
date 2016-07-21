@@ -11,9 +11,9 @@ $type = $_POST['type'];
 $message = $_POST['message'];
 
 $success = true;
-// $name_error= '';
-// $email_error= '';
-// $message_error= '';
+$name_error= '';
+$email_error= '';
+$message_error= '';
 
 if(strpos($email,'@')===false){
   $email_error = '@マークがありません';
@@ -47,7 +47,7 @@ $_SESSION['name_error'] = $name_error;
 $_SESSION['email_error'] = $email_error;
 $_SESSION['message_error'] = $message_error;
 
-if($_POST['name'] == '' || $_POST['email'] == '' || $_POST['message'] == ''){
+if($_POST['name'] == '' || $_POST['email'] == '' || $_POST['message'] == '' || $name_error !== '' || $email_error !== '' || $message_error !== ''){
   header('Location:index2.php');
   exit;
 }
@@ -63,7 +63,7 @@ if($_POST['name'] == '' || $_POST['email'] == '' || $_POST['message'] == ''){
 
 <body>
   <div class="inquiry">
-  <table summary="お問い合わせに関する入力項目名とその入力欄" id="inquiry">
+  <table summary="お問い合わせに関する入力項目名とその入力欄">
   <h1>お問い合わせ</h1>
   <tr><th>お名前         </th><td><?php echo h($name) ?></td></tr><br>
   <tr><th>メールアドレス </th><td><?php echo h($email)?></td></tr><br>
@@ -72,14 +72,17 @@ if($_POST['name'] == '' || $_POST['email'] == '' || $_POST['message'] == ''){
   </table>
   </div>
 
+  <div class="button">
   <form action="index2.php" method="post" >
     <input type="submit" value="戻る" class="back">
   </form>
 
+  <div class="space"></div>
+
   <form action="thankyou.php" method="post">
     <input type="submit" value="送信する">
   </form>
-
+  </div>
 </body>
 </html>
 

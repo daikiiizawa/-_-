@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /*フォーム全体の枠取り*/
 .inquiry {
   margin: auto;
@@ -20,7 +21,7 @@ th {
   text-align: left;
 }
 
-table span{
+span{
   color: #FF0000;
 }
 th, td {
@@ -64,9 +65,14 @@ input.back{
   background-color:#A9A9A9;
 }
 
-
-/*ボタン位置の調整*/
-form{
-  float: left;
-  margin-left: 70px;
+.space{
+  margin-right: 20px;
 }
+
+.button{
+  display: flex;
+  justify-content: center;
+  margin-right: 30%;
+}
+
+

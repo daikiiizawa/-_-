@@ -1,3 +1,4 @@
+
 create database impression;
 
 use impression;

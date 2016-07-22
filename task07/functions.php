@@ -1,3 +1,4 @@
+<!-- task07完成版 -->
 <?php
 // DB接続
 function connectDatabase()

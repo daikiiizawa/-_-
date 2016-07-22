@@ -1,3 +1,4 @@
+<!-- task06完成版 -->
 <?php
 $filename = "sales.csv";
 $fp = fopen($filename,'r');

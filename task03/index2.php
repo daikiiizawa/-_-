@@ -1,3 +1,4 @@
+<!-- task03完成版 -->
 <?php
 function h($s)
 {

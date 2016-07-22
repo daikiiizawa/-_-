@@ -1,3 +1,4 @@
+<!-- task07完成版 -->
 <?php
 
 require_once('config.php');

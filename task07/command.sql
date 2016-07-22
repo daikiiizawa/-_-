@@ -1,3 +1,5 @@
+-- task07完成版
+
 create database nowall_login;
 
 use nowall_login;

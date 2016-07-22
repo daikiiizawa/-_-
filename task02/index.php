@@ -2,6 +2,7 @@
 
 $n = '';
 $s = '';
+$sum = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
   // var_dump($_POST);
@@ -23,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     s:長さ1の文字列(s)を入力してね <input type="text" name="s"><br>
     <input type="submit" value="sをn個表示させるよ"><br>
     <?php echo 'n = '.$n.', s = '.$s.'のとき'; ?><br>
-    <?php for ($i = 0; $i < $n; $i++) {echo $s;} ?>
-
+    <?php for ($i = 0; $i < $n; $i++) {$sum .= $s;} ?>
+    <?php echo $sum; ?>
   </form>
 
 </body>

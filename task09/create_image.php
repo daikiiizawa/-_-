@@ -1,6 +1,4 @@
-
 <?php
-
 require_once('functions.php');
 
 $id = $_GET['id'];
@@ -11,11 +9,10 @@ $sql = "select * from posts where id = '".$id."' ";
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
-$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$row = $stmt->fetch();
 
 
 header( 'Content-Type: '.$row['mime'] );
-echo $row['imgdat'];
-
-
+echo ($row['imgdat']);
+exit();
 ?>

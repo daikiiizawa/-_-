@@ -28,11 +28,11 @@ $imgdat = addslashes($imgdat);
 $dat = pathinfo($file["name"]);
 $extension = $dat['extension'];
 
+// var_dump($image);
 // var_dump($file);
 // var_dump($extension);
 // var_dump($dat);
 // var_dump($imgdat);
-// var_dump($image);
 // exit;
 
 // MIMEタイプ
@@ -59,8 +59,8 @@ $stmt->bindParam(":mime", $mime);
 
 $stmt->execute();
 
-echo $sql;
-echo '成功しました';
+// echo $sql;
+// echo '成功しました';
 
 ?>
 
@@ -78,8 +78,6 @@ echo '成功しました';
 <!-- <img src=logo.png?id=1> -->
   <!-- <p><a href="index.php">戻る</a></p> -->
   <p><a href="result.php">投稿内容を見る</a></p>
-
-
 
   </body>
 </html>

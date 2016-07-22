@@ -1,4 +1,3 @@
-
 <?php
 
 require_once('functions.php');
@@ -11,7 +10,7 @@ $stmt->execute();
 
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
+var_dump($row);
 // header( "Content-Type: image/png" );
 // header( "Content-Type: ".$row['mime'] );
 // echo $row;
@@ -33,7 +32,7 @@ $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <li>
         「<?php echo h($post['impression']) ?>」
         @<?php echo h($post['name']) ?>
-        <?php echo "<img src=\"create_image.php?id=" .$post['id'] . "\">" ?>
+        <?php echo '<img src="./create_image.php?id=' .$post['id']. '" />' ?>
       </li>
     <?php endforeach; ?>
   <?php else :?>

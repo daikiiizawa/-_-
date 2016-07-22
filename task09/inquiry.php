@@ -30,9 +30,6 @@ $extension = $dat['extension'];
 
 // var_dump($image);
 // var_dump($file);
-// var_dump($extension);
-// var_dump($dat);
-// var_dump($imgdat);
 // exit;
 
 // MIMEタイプ

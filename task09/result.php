@@ -10,6 +10,10 @@ $stmt->execute();
 
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+// header( "Content-Type: image/png" );
+// header( "Content-Type: ".$row['mime'] );
+// echo $row;
 // var_dump($row);
 
 ?>
@@ -28,6 +32,7 @@ $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <li>
         「<?php echo h($post['impression']) ?>」
         @<?php echo h($post['name']) ?>
+        <?php echo "<img src=\"create_image.php?id=" .$post['id'] . "\">" ?>
       </li>
     <?php endforeach; ?>
   <?php else :?>

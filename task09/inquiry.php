@@ -13,25 +13,52 @@ if (empty($_POST['name']) || empty($_POST['impression']))
 $name = $_POST['name'];
 $impression = $_POST['impression'];
 $file = $_FILES['upload_file'];
-$image = file_get_contents($file["tmp_name"]);
-$result = move_uploaded_file($file['tmp_name'], "uploads/".$file['name']);
+$filename = $file['name'];
+// $image = file_get_contents($file["tmp_name"]);
+// $result = move_uploaded_file($file['tmp_name'], "uploads/".$file['name']);
 
-var_dump($file);
-var_dump($image);
+// バイナリデータ
+$fp = fopen($file["tmp_name"], "rb");
+$imgdat = fread($fp, filesize($file["tmp_name"]));
+fclose($fp);
+$imgdat = addslashes($imgdat);
 
+// 拡張子
+$dat = pathinfo($file["name"]);
+$extension = $dat['extension'];
+
+// var_dump($file);
+// var_dump($extension);
+// var_dump($dat);
+// var_dump($imgdat);
+// var_dump($image);
 // exit;
+
+// MIMEタイプ
+if($extension == "jpg" || $extension == "jpeg" ) {
+  $mime = "image/jpeg";
+}
+else if($extension == "gif" ){
+  $mime = "image/gif";
+}
+else if($extension == "png" ){
+  $mime = "image/png";
+}
+
 
 $dbh = connectDb();
 
-$sql = "insert into posts (name, impression, created_at, image) values
-        (:name, :impression, now()) :image,";
+$sql = "insert into posts (name, impression, imgdat, mime) values
+        (:name, :impression, :imgdat, :mime)";
 $stmt = $dbh->prepare($sql);
 $stmt->bindParam(":name", $name);
 $stmt->bindParam(":impression", $impression);
-$stmt->bindParam(":image", $image);
+$stmt->bindParam(":imgdat", $imgdat);
+$stmt->bindParam(":mime", $mime);
 
 $stmt->execute();
 
+echo $sql;
 echo '成功しました';
 
 ?>
@@ -39,18 +66,18 @@ echo '成功しました';
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <title>投稿確認画面</title>
   </head>
   <body>
   <h1>下記の内容が投稿されました</h1>
   <p>名前: <?php echo h($name) ?></p>
   <p>感想: <?php echo h($impression) ?></p>
-
-  <p><a href="index.php">戻る</a></p>
+  <p>画像: </p>
+<!-- <img src=logo.png?id=1> -->
+  <!-- <p><a href="index.php">戻る</a></p> -->
   <p><a href="result.php">投稿内容を見る</a></p>
 
-  <p><?php echo $image; ?></p>
 
 
   </body>

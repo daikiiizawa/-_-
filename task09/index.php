@@ -10,7 +10,8 @@
   <form action="inquiry.php" method="post" enctype="multipart/form-data">
     名前: <input type="text" name="name"><br>
     感想: <input type="text" name="impression"><br>
-    画像選択: <input type="file" name="upload_file" value="画像投稿"><br>
+
+    画像: <input type="file" name="upload_file"><br>
     <input type="submit" value="投稿する">
   </form>
   <p><a href="result.php">投稿内容を見る</a></p>

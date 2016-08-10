@@ -15,14 +15,14 @@ $name = $_POST['name'];
 $impression = $_POST['impression'];
 $file = $_FILES['upload_file'];
 $filename = $file['name'];
-// $image = file_get_contents($file["tmp_name"]);
 // $result = move_uploaded_file($file['tmp_name'], "uploads/".$file['name']);
 
 // バイナリデータ
-$fp = fopen($file["tmp_name"], "rb");
-$imgdat = fread($fp, filesize($file["tmp_name"]));
-fclose($fp);
-$imgdat = addslashes($imgdat);
+$imgdat = file_get_contents($file["tmp_name"]);
+// $fp = fopen($file["tmp_name"], "rb");
+// $imgdat = fread($fp, filesize($file["tmp_name"]));
+// fclose($fp);
+// $imgdat = addslashes($imgdat);
 
 // 拡張子
 $dat = pathinfo($file["name"]);
@@ -45,6 +45,8 @@ else if($extension == "png" ){
 
 
 $dbh = connectDb();
+
+// $imgdat = mysql_real_escape_string( $dbh, $imgdat );
 
 $sql = "insert into posts (name, impression, imgdat, mime) values
         (:name, :impression, :imgdat, :mime)";

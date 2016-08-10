@@ -10,10 +10,10 @@ $stmt->execute();
 
 $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump($row);
+// var_dump($row);
 // header( "Content-Type: image/png" );
-// header( "Content-Type: ".$row['mime'] );
-// echo $row;
+header( "Content-Type: ".$row['mime'] );
+echo $row;
 // var_dump($row);
 
 ?>

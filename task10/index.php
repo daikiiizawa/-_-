@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
   if ($name != '' && $title != '' && isset($file))
   {
     $createdAt = date('Y-m-d');
-    $imgdat = file_get_contents($file['tmp_name']);
-    // $result = move_uploaded_file($file['tmp_name'], "/var/www/html/task10/uploads/".$file['name']);
+    // $imgdat = file_get_contents($file['tmp_name']);
+    $result = move_uploaded_file($file['tmp_name'], "/var/www/html/task10/uploads/".$file['name']);
     // 拡張子
     $dat = pathinfo($file["name"]);
     $extension = $dat['extension'];

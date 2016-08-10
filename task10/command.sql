@@ -1,4 +1,3 @@
-
 create database imagebbs;
 
 use imagebbs;

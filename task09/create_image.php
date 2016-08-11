@@ -10,7 +10,7 @@ $stmt = $dbh->prepare($sql);
 $stmt->execute();
 
 $row = $stmt->fetch();
-
+// $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 header( 'Content-Type: '.$row['mime'] );
 echo ($row['imgdat']);

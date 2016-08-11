@@ -12,8 +12,8 @@ $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // var_dump($row);
 // header( "Content-Type: image/png" );
-header( "Content-Type: ".$row['mime'] );
-echo $row;
+header( "Content-Type: ".$row[0]['mime'] );
+echo $row[0]['imgdat'];
 // var_dump($row);
 
 ?>

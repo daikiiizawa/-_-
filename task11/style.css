@@ -1,0 +1,79 @@
+/*task03完成版*/
+@charset "UTF-8";
+
+
+/*フォーム全体の枠取り*/
+.inquiry {
+  margin: auto;
+  background-color: #FFF;
+  width: 600px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 0 0 3px #999;
+  line-height: 0.5;
+}
+
+h1 {
+  margin: auto;
+  font-size: 20px;
+}
+
+th {
+  background-color: #E5F7F2;
+  text-align: left;
+}
+
+span{
+  color: #FF0000;
+}
+th, td {
+  font-size: 12px;
+  border: 1px solid #B0C4DE;
+  padding: 13px;
+  line-height: 15px;
+}
+
+td{
+  width: 330px;
+}
+
+/*お問い合わせ内容入力欄*/
+input.message{
+  height: 100px;
+  max-height: 499px;
+}
+
+
+input[type="submit"] {
+  border: none;
+  margin: 20px 0 0;
+  padding:  5px 18px;
+  color:  #FFF;
+  background-color: #4682B4;
+  font-size:  12px;
+  /*transition: .5s;*/
+}
+
+.check{
+  text-align: center;
+}
+
+input[type="submit"]:hover{
+  opacity: .7;
+}
+
+input.back{
+  color:  #FFF;
+  background-color:#A9A9A9;
+}
+
+.space{
+  width: 20px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  margin-right: 30%;
+}
+
+

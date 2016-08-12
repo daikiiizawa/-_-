@@ -1,0 +1,25 @@
+<!-- task07完成版 -->
+<?php
+// DB接続
+function connectDatabase()
+{
+  try
+  {
+    return new PDO(DSN,USER,PASSWORD);
+  }
+  catch(PDOException $e)
+  {
+    echo $e->getMessage();
+    exit;
+  }
+}
+
+
+//エスケープ処置
+function h($s)
+{
+  return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+}
+
+
+

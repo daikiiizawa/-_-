@@ -2,18 +2,18 @@
 
 function connectDatabase()
 {
-  try
-  {
-    return new PDO(DSN, USER, PASSWORD);
-  }
-  catch (PDOException $e)
-  {
-    echo $e->getMessage();
-    exit;
-  }
+    try
+    {
+        return new PDO(DSN, USER, PASSWORD);
+    }
+    catch (PDOException $e)
+    {
+        echo $e->getMessage();
+        exit;
+    }
 }
 
 function h($s)
 {
-  return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+    return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
 }

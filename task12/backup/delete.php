@@ -17,9 +17,10 @@ $row = $stmt->fetch();
 
 if (!$row)
 {
-    header('Location: index.php');
-    exit;
+  header('Location: index.php');
+  exit;
 }
+
 
 $sql_delete = "delete from posts where id = :id";
 $stmt_delete = $dbh->prepare($sql_delete);
@@ -28,3 +29,7 @@ $stmt_delete->execute();
 
 header('Location: index.php');
 exit;
+
+?>
+
+

@@ -1,73 +1,57 @@
 <?php
-
 require_once('config.php');
 require_once('functions.php');
+require_once('homework009_signup_form_model.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = array();
+    $form_model = new Homework009SignupFormModel();
 
+    $form_model->validate();
+    $errors = $form_model->getErrors();
 
-    // バリデーション
-    if ($name == '')
-    {
-        $errors['name'] = 'ユーザーネームが未入力です';
-    }
-
-    if ($email == '')
-    {
-        $errors['email'] = 'メールアドレスが未入力です';
-    }
-
-
-    //バリデーション突破後
-    if (empty($errors))
-    {
-        $dbh = connectDatabase();
-        $sql = "insert into users (name, email, created_at) values
-                (:name, :email, now())";
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(":name", $name);
-        $stmt->bindParam(":email", $email);
-        $stmt->execute();
-
+    // バリデーション突破後
+    if (empty($errors)) {
+        $form_model->createUser();
+        // ログイン画面へ飛ばす
         header('Location: login.php');
         exit;
-
     }
-
 }
 
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>新規登録画面</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>新規登録画面</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
 <body>
+<div class="container">
     <h1>新規登録</h1>
-    <form action="" method="post">
-    <p>
-        ユーザーネーム: <input type="text" name="name">
-        <?php if ($errors['name']) : ?>
-            <?php echo h($errors['name']); ?>
-        <?php endif  ?>
-    </p>
-    <p>
-        メールアドレス: <input type="text" name="email">
-        <?php if ($errors['email']) : ?>
-            <?php echo h($errors['email']); ?>
-        <?php endif  ?>
-    </p>
-    <input type="submit" value="登録する">
-
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group <?php if ($errors['name']) echo 'has-error'; ?>">
+            <label class="control-label" for="name">ユーザーネーム</label>
+            <input type="text" class="form-control" name="name">
+            <?php if ($errors['name']) : ?>
+                <p class="help-block"><?php echo h($errors['name']) ?></p>
+            <?php endif ?>
+        </div>
+        <div class="form-group <?php if ($errors['email']) echo 'has-error'; ?>">
+            <label for="email">Eメール</label>
+            <input type="text" class="form-control" name="email">
+            <?php if ($errors['email']) : ?>
+                <p class="help-block"><?php echo h($errors['email']) ?></p>
+            <?php endif ?>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">プロフィール画像</label>
+            <input type="file" name="image_file">
+        </div>
+        <button type="submit" class="btn btn-default">登録する</button>
     </form>
     <a href="login.php">ログイン画面へ</a>
+</div>
 </body>
 </html>

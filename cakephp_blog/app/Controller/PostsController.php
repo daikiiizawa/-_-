@@ -9,6 +9,7 @@ class PostsController extends AppController{
     // ヘルパーの利用宣言
     public $helper = array('Html', 'Form');
 
+
     public function index() {
         $options = array(
             'limit' => '2' ,
@@ -16,10 +17,12 @@ class PostsController extends AppController{
         $this->set('posts', $this->Post->find('all'));
     }
 
+
     public function view($id = null) {
         $this->Post->id = $id;
         $this->set('post', $this->Post->findById($id));
     }
+
 
     public function add() {
         if ($this->request->is('post')) {
@@ -33,6 +36,7 @@ class PostsController extends AppController{
         }
 
     }
+
 
     public function edit($id = null) {
         $this->Post->id = $id;
@@ -52,8 +56,9 @@ class PostsController extends AppController{
         }
     }
 
+
     public function delete($id = null) {
-        if ($this->request->is('get')){
+        if ($this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
 

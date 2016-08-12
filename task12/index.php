@@ -2,6 +2,7 @@
 
 require_once('config.php');
 require_once('functions.php');
+require_once('user.php');
 
 session_start();
 
@@ -59,11 +60,11 @@ $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>会員制掲示版</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1><?php echo h($_SESSION['name']) ?>さん 会員制掲示版へようこそ！</h1>
     <p><a href="logout.php">ログアウト</a></p>
     <p>一言どうぞ！</p>
@@ -95,5 +96,5 @@ $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif ?>
 
 
-  </body>
+</body>
 </html>

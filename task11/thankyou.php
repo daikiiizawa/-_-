@@ -8,8 +8,8 @@ mb_internal_encoding("UTF-8");
 $to = "daiki.813.gon@gmail.com";
 $subject = $_SESSION['title'];
 
-$body = "■お名前：" . $_SESSION["name"] ."\n";
-$body .= "■内容：" . $_SESSION["message"] ."\n";
+// $body = "■お名前：" . $_SESSION["name"] ."\n";
+$body = "■内容：" . $_SESSION["message"] ."\n";
 
 $fromEmail = $_SESSION['email'];
 $header = "From: " . $fromEmail;

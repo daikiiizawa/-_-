@@ -18,6 +18,36 @@ ALTER TABLE `shops` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 alter table shops add photo varchar(255) DEFAULT NULL;
 alter table shops add photo_dir varchar(255) DEFAULT NULL;
 
+-- usersテーブル作成
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB;
+ALTER TABLE `users` ADD PRIMARY KEY (`id`);
+ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- reviewsテーブルの作成
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `shop_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  `score` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB;
+ALTER TABLE `reviews` ADD PRIMARY KEY (`id`);
+ALTER TABLE `reviews` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `reviews` ADD KEY `user_id` (`user_id`), ADD KEY `shop_id` (`shop_id`);
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`),
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+
 -- テストレコード挿入
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ0", "000-999-9999", "東京都新宿区0丁目", "http://www0.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ1", "111-999-9999", "東京都新宿区1丁目", "http://www1.shop.co.jp", now(), now());
@@ -51,14 +81,3 @@ INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES 
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ27", "777-999-9999", "東京都新宿区7丁目", "http://www7.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ28", "888-999-9999", "東京都新宿区8丁目", "http://www8.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ29", "999-999-9999", "東京都新宿区9丁目", "http://www9.shop.co.jp", now(), now());
-
--- usersエーブル作成
-create table `users` (
-    `id` int(11) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `password` varchar(100) NOT NULL,
-    `created` datetime NOT NULL,
-    `updated` datetime NOT NULL
-) ENGINE=InnoDB;
-alter table `users` ADD PRIMARY KEY (`id`);
-alter table `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

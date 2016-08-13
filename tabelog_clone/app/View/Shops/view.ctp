@@ -9,8 +9,8 @@
         <tbody>
         <tr>
             <td style="width: 30%;">写真</td>
-            <td style="width: 25%;">店名</td>
-            <td style="width: 75%;"><?= $shop['Shop']['name']; ?></td>
+            <td style="width: 20%;">店名</td>
+            <td style="width: 50%;"><?= $shop['Shop']['name']; ?></td>
         </tr>
         <tr>
             <td rowspan="3">

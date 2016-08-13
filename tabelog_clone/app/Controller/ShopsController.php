@@ -4,10 +4,13 @@ class ShopsController extends AppController{
 
     public $helpers = ['Shop'];
 
-    public $components = [
-        'Paginator' => ['limit' => 10,'order' => ['created' => 'desc']]
-    ];
+    public $components = ['Paginator' => ['limit' => 10,'order' => ['created' => 'desc']]];
 
+
+    public function beforefilter() {
+        parent::beforefilter();
+        $this->Auth->allow('index', 'view');
+    }
 
     public function index() {
         // $this->set('shops', $this->Shop->find('all'));

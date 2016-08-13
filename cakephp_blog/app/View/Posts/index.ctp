@@ -45,3 +45,10 @@
     </tr>
     <?php endforeach ?>
 </table>
+
+<div style="text-align: center">
+    <?= $this->Paginator->prev('< 前へ'); ?>&nbsp;
+    <?= $this->Paginator->numbers(); ?>&nbsp;
+    <?= $this->Paginator->next('次へ >'); ?>
+</div>
+

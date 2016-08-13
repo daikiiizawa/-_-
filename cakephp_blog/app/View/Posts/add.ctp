@@ -5,6 +5,6 @@
 echo $this->Form->create('Post');
 echo $this->Form->input('title');
 echo $this->Form->input('body');
-echo $this->Form->submit('投稿する');
+echo $this->Form->submit('登録する');
 
 ?>

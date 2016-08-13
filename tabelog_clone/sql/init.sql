@@ -14,6 +14,10 @@ CREATE TABLE `shops` (
 ALTER TABLE `shops` ADD PRIMARY KEY (`id`);
 ALTER TABLE `shops` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+-- ファイルアップロードに必要なカラムの追加
+alter table shops add photo varchar(255) DEFAULT NULL;
+alter table shops add photo_dir varchar(255) DEFAULT NULL;
+
 -- テストレコード挿入
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ0", "000-999-9999", "東京都新宿区0丁目", "http://www0.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ1", "111-999-9999", "東京都新宿区1丁目", "http://www1.shop.co.jp", now(), now());

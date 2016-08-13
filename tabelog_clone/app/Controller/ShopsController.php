@@ -2,6 +2,8 @@
 
 class ShopsController extends AppController{
 
+    public $helpers = ['Shop'];
+
     public $components = [
         'Paginator' => ['limit' => 10,'order' => ['created' => 'desc']]
     ];

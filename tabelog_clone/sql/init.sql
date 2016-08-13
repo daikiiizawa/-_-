@@ -51,3 +51,14 @@ INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES 
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ27", "777-999-9999", "東京都新宿区7丁目", "http://www7.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ28", "888-999-9999", "東京都新宿区8丁目", "http://www8.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ29", "999-999-9999", "東京都新宿区9丁目", "http://www9.shop.co.jp", now(), now());
+
+-- usersエーブル作成
+create table `users` (
+    `id` int(11) NOT NULL,
+    `email` varchar(255) NOT NULL,
+    `password` varchar(100) NOT NULL,
+    `created` datetime NOT NULL,
+    `updated` datetime NOT NULL
+) ENGINE=InnoDB;
+alter table `users` ADD PRIMARY KEY (`id`);
+alter table `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

@@ -4,6 +4,4 @@
 $config['Photo.dir'] = '/files/shop/photo/';
 
 // デフォルト画像
-$config['Photo.default'] = '/img_restaurant.jpg';
-
-?>
+$config['Photo.default'] = '/img/restaurant.jpg';

@@ -14,7 +14,7 @@ ELITESの課題を記録
 [task09: [課題] 感想投稿フォームの機能追加](https://github.com/daikiiizawa/task/tree/master/task09)  
 [task10: [課題] 画像投稿掲示版の作成](https://github.com/daikiiizawa/task/tree/master/task10)  
 [task11: [課題] メール送信機能を備えたお問い合わせフォームの作成](https://github.com/daikiiizawa/task/tree/master/task11)  
-[task12: [課題] 会員制掲示版の機能追加]()  
+[task12: [課題] 会員制掲示版の機能追加](https://github.com/daikiiizawa/task/tree/master/task12)  
 
 ### 学習成果
 [task-practice-01: 「会員制掲示板をつくろう」](https://github.com/daikiiizawa/task/tree/master/task-practice-01)  

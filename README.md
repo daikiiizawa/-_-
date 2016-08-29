@@ -3,7 +3,7 @@ ELITESの課題を記録
 
 ## 成果物(課題)一覧
 ### 提出課題
-[task01: [課題] HTML/CSS編](https://github.com/daikiiizawa/task/tree/master/task01/%E8%AA%B2%E9%A1%8C%E4%BD%9C%E6%A5%AD)  
+[task01: [課題] HTML/CSS編](https://github.com/daikiiizawa/task/tree/master/task01)  
 [task02: [課題] 文字列の連結](https://github.com/daikiiizawa/task/tree/master/task02)  
 [task03: [課題] お問い合わせフォームを作成](https://github.com/daikiiizawa/task/tree/master/task03)  
 [task04: [課題] 数字の桁数](https://github.com/daikiiizawa/task/tree/master/task04)  

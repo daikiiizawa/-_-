@@ -17,10 +17,10 @@ class Shop extends AppModel {
 
     public $hasMany = [
         'Review' => [
-            'className' => 'Review'
+            'className' => 'Review',
+            'dependent' => true // Shop が削除されたら Review も再帰的に削除する
         ]
     ];
-
 
     public $validate = [
         'name' => [

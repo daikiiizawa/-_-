@@ -70,15 +70,5 @@ class AppController extends Controller {
             'Security',
         ],
     ];
-
-    public $helpers = array(
-        'Session',
-        'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
-        'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
-        'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator')
-    );
-
-    public $layout = 'bootstrap';
-
 }
 

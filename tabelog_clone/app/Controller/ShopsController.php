@@ -2,6 +2,8 @@
 
 class ShopsController extends AppController{
 
+    public $uses = ['Shop', 'Review'];
+
     public $helpers = ['Shop'];
 
     public $components = ['Paginator' => ['limit' => 10,'order' => ['created' => 'desc']]];
@@ -21,7 +23,25 @@ class ShopsController extends AppController{
         if (!$this->Shop->exists($id)){
             throw new NotFoundException('レストランが見つかりません');
         }
-        $this->set('shop', $this->Shop->findById($id));
+
+        // 現在のユーザーがレビューを投稿済かチェック
+
+
+        // レストランのレビューの平均点を取得
+
+
+        // レストラン情報を取得
+
+
+        // ビューに値を渡す
+
+
+
+
+
+
+
+
     }
 
     public function add() {

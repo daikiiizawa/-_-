@@ -4,15 +4,16 @@ class ReviewsController extends AppController {
 
     public $uses = ['Review', 'Shop'];
 
+    // 編集機能、新規投稿機能を含む
     public function edit($shopId = null) {
 
         if (!$this->Shop->exists($shopId)) {
-            throw new NotFountException('レストランがみつかりません');
+            throw new NotFoundException('レストランがみつかりません');
         }
 
         $userId = $this->Auth->user('id');
 
-        if($this->request->is(['post', 'put'])) {
+        if ($this->request->is(['post', 'put'])) {
             $message = 'レビューを更新しました';
             if (empty($this->request->data['Review']['id'])) {
                 $message = 'レビューを登録しました';
@@ -41,10 +42,3 @@ class ReviewsController extends AppController {
 
     }
 }
-
-
-
-
-
-
-

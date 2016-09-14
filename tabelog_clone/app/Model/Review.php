@@ -3,12 +3,8 @@
 class Review extends AppModel {
 
     public $belongsTo = [
-        'User' => [
-            'className' => 'User'
-        ],
-        'Shop' => [
-            'className' => 'Shop'
-        ]
+        'User' => ['className' => 'User'],
+        'Shop' => ['className' => 'Shop']
     ];
 
 
@@ -21,7 +17,7 @@ class Review extends AppModel {
 
     public function getData($shopId, $userId) {
 
-        $option = [
+        $options = [
             'conditions' => [
                 'shop_id' => $shopId,
                 'user_id' => $userId

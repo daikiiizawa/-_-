@@ -71,8 +71,6 @@ class AppController extends Controller {
         ],
     ];
 
-}
-class AppController extends Controller {
     public $helpers = array(
         'Session',
         'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),

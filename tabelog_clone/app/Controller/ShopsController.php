@@ -33,7 +33,7 @@ class ShopsController extends AppController {
             'Shop' => [
                 'limit' => 10,                  // 1ページ内に表示するデータ数
                 'order' => [                    // 並び順
-                    'Shop.created' => 'desc',
+                    'Shop.created' => 'asc',
                     'Shop.name' => 'asc',
                 ],
 

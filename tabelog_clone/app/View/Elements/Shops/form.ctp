@@ -1,3 +1,5 @@
+<div class="form-group">
+
 <?= $this->Form->create('Shop', ['type' => 'file']); ?>
 <?= $this->Form->input('name', ['label' => '店名']); ?>
 <?= $this->Form->input('tel', ['label' => '電話番号']); ?>
@@ -11,3 +13,5 @@
     <?= $this->Form->hidden('id'); ?>
 <?php endif;?>
 <?= $this->Form->end($submitLabel); ?>
+
+</div>

@@ -48,6 +48,49 @@
             </li>
           </ul>
 
+        <ul class="nav navbar-nav navbar-right">
+        <?php if ($currentUser) : ?>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $currentUser['email'] ?><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-second-li">
+                        <?= $this->Html->link(
+                            '会員情報変更',
+                            ['controller' => 'users', 'action' => 'edit']
+                        ); ?>
+                    </li>
+                    <li class="menu-second-li">
+                        <?= $this->Html->link(
+                            'パスワード変更',
+                            ['controller' => 'users', 'action' => 'changePassword']
+                        ); ?>
+                    </li>
+                    <li class="menu-second-li">
+                        <?= $this->Html->link(
+                            'ログアウト',
+                            ['controller' => 'users', 'action' => 'logout']
+                        ); ?>
+                    </li>
+                </ul>
+            </li>
+        <?php else : ?>
+            <li>
+                <?= $this->Html->link(
+                    '新規会員登録',
+                    ['controller' => 'users', 'action' => 'add']
+                ); ?>
+            </li>
+            <li>
+                <?= $this->Html->link(
+                    'ログイン',
+                    ['controller' => 'users', 'action' => 'login']
+                ); ?>
+            </li>
+        <?php endif; ?>
+    </ul>
+
+
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>

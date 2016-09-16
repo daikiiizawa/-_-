@@ -2,7 +2,6 @@
 
 <div>
     <?= $this->Flash->render('auth'); ?>
-
     <?= $this->Form->create('User'); ?>
 
     <fieldset>

@@ -4,7 +4,7 @@ class ShopHelper extends AppHelper {
 
     public $helpers = ['Html'];
 
-    public function photoimage($shop, $options = []) {
+    public function photoImage($shop, $options = []) {
 
         $photoDir = Configure::read('Photo.dir');
         $defaultPhoto = Configure::read('Photo.default');
